@@ -27,8 +27,6 @@ function App() {
     event.preventDefault();
     const email = event.target.email.value;
     const number = event.target.number.value;
-
-    console.log(number.length)
     if (!email) {
       setStateInputEmail(false);
       setError("Введите хотя бы email");
