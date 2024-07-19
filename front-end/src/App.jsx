@@ -30,7 +30,7 @@ function App() {
     if (!email) {
       setStateInputEmail(false);
       setError("Введите хотя бы email");
-    } else if(number.length < 6) {
+    } else if(number.length > 0 && number.length < 6) {
       setStateInputNumber(false);
       setError("Номер должен содержать 6 цифр");
     } else {
