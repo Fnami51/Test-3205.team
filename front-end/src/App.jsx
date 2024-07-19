@@ -27,10 +27,12 @@ function App() {
     event.preventDefault();
     const email = event.target.email.value;
     const number = event.target.number.value;
+
+    console.log(number.length)
     if (!email) {
       setStateInputEmail(false);
       setError("Введите хотя бы email");
-    } else if(number.length > 0 && number.length < 6) {
+    } else if(number.length > 0 && number.length < 8) {
       setStateInputNumber(false);
       setError("Номер должен содержать 6 цифр");
     } else {
