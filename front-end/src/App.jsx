@@ -6,7 +6,8 @@ import Responce from './components/Response';
 
 function App() {
   const [stateResponse, setStateResponse] = useState(false);
-  const [stateInput, setStateInput] = useState(true);
+  const [stateInputEmail, setStateInputEmail] = useState(true);
+  const [stateInputNumber, setStateInputNumber] = useState(true);
 
   const [resultSearch, setResponce] = useState(null)
   const [errorMessage, setError] = useState("Всё хорошо")
@@ -27,16 +28,17 @@ function App() {
     const email = event.target.email.value;
     const number = event.target.number.value;
     if (!email) {
-      setStateInput(false);
+      setStateInputEmail(false);
       setError("Введите хотя бы email");
     } else if(number.length < 6) {
-      setStateInput(false);
+      setStateInputNumber(false);
       setError("Номер должен содержать 6 цифр");
     } else {
       setStateResponse(true);
       setResponce(null);
       setError("Всё хорошо")
-      setStateInput(true); 
+      setStateInputEmail(true); 
+      setStateInputNumber(true); 
       try {
         postSearch(email, number).then((data) => {
           setResponce(() => {
@@ -60,8 +62,8 @@ function App() {
 
       <form className='form' id="formSearch" onSubmit={handleSubmit}>
         <h1 className='title'>Поиск</h1>
-        <input type="email" className='input' id='email' placeholder='Введите email' style={!stateInput ? {border: "red 4px solid"} : null}/>
-        <input type="text" className='input' id='number' placeholder='Введите телефон' value={value} onChange={handleInputMask} maxLength="8"/>
+        <input type="email" className='input' id='email' placeholder='Введите email' style={!stateInputEmail ? {border: "red 4px solid"} : null}/>
+        <input type="text" className='input' id='number' placeholder='Введите телефон' value={value} onChange={handleInputMask} maxLength="8" style={!stateInputNumber ? {border: "red 4px solid"} : null}/>
 
         <button className='button' type='submit'>Искать</button>
         <p className='message' style={errorMessage === "Всё хорошо" ? {display: 'none'} : {display: 'block'}}>{errorMessage}</p>
