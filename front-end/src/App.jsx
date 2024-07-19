@@ -25,17 +25,19 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault();
     const email = event.target.email.value;
+    const number = event.target.number.value;
     if (!email) {
       setStateInput(false);
       setError("Введите хотя бы email");
+    } else if(number.length < 6) {
+      setStateInput(false);
+      setError("Номер должен содержать 6 цифр");
     } else {
       setStateResponse(true);
       setResponce(null);
       setError("Всё хорошо")
       setStateInput(true); 
       try {
-        const number = event.target.number.value;
-
         postSearch(email, number).then((data) => {
           setResponce(() => {
             const responce = data.users[0] || { email: 'Не найдено', number: '000000' };
