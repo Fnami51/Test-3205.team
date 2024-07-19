@@ -1,0 +1,218 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.background{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.answer{
+  background-color: #ffffff;
+  width: 400px;
+  height: 200px;
+  border: #aaaaaa 3px solid;
+  border-radius: 24px;
+  padding: 20px 30px 20px 30px;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.answer:hover, .answer:focus-visible{
+  border: #646cff 4px solid;
+  box-shadow: 10px 5px 15px rgb(175, 175, 175);
+}
+
+.result-title{
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #00011b;
+  text-align: left;
+}
+
+.answer-box{
+  height: 150px;
+}
+
+.text{
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 15px;
+  margin-left: 40px;
+  color: #00011b;
+  text-align: left;
+  font-style: italic
+}
+
+.text-no-result{
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  color: #00011b;
+  text-align: left;
+}
+
+.result{
+  font-weight: 700;
+}
+
+.result-text{
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 15px;
+  margin-left: 50px;
+  color: #00011b;
+  text-align: left;
+}
+
+/*Form*/
+.form{
+  background-color: #ffffff;
+  width: 400px;
+  height: 350px;
+  border: #aaaaaa 3px solid;
+  border-radius: 24px;
+  padding: 20px 30px 20px 30px;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form:hover, .form:focus-visible{
+  border: #646cff 4px solid;
+  box-shadow: 10px 5px 15px rgb(175, 175, 175);
+}
+
+.title{
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #00011b;
+}
+
+.input{
+  width: 300px;
+  height: 25px;
+
+  border: #646464 2px solid;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 5px 30px 5px 30px;
+
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.input::placeholder{
+  color: #919191;
+  font-weight: 200;
+}
+
+.input:hover{
+  border-color: #646cff;
+}
+
+.button{
+  width: 250px;
+  height: 45px;
+  margin-top: 35px;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background-color: #646cff;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.button:hover{
+  box-shadow: 7px 5px 15px rgb(175, 175, 175);
+  border: #4e53c0 2px solid;
+}
+
+.button:active{
+  background-color: #00ff62;
+  box-shadow: -3px -3px 10px rgb(219, 219, 219);
+  border: none;
+  color: #e5ff00;
+}
+
+.message{
+  color: red;
+  font-weight: 100;
+  font-size: 14px;
+  text-align: left;
+}
+
+/*Animation Loading*/
+
+.loader-box{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(100, 108, 255, 0.75));
+}
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem #646cff;
+  animation-name: pulsIn;
+}
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 #646cff;
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem #646cff;
+    opacity: 1;
+  }
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 #646cff;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+  0%, 50% {
+    box-shadow: 0 0 0 0 #646cff;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem #646cff;
+    opacity: 1;
+  }
+}
+    
